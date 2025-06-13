@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-poppins: "Poppins", sans-serif;
+  --breakpoint-sm: 30.75rem;
+}
+
+body {
+  @apply font-poppins bg-[url(/background.png)] bg-cover bg-fixed text-white;
+}
+
+.navlink {
+  @apply border-b-3 border-transparent hover:border-red-500;
+}
+
+.active {
+  @apply border-red-500;
+}
