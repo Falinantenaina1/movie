@@ -13,7 +13,7 @@ export const ImageWithPlaceHolder = ({
     <>
       {loading && (
         <div className="absolute inset-0 flex h-70 w-full animate-pulse items-center justify-center rounded-xl bg-gray-800/80">
-          <span className="text-gray-500">Loading</span>
+          <span className="text-gray-500">Loading...</span>
         </div>
       )}
       <img

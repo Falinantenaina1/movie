@@ -15,13 +15,13 @@ export interface Movie {
 }
 
 export interface MovieDetails extends Movie {
-  backdrop_paht: string;
+  backdrop_path: string;
   belongs_to_collection: string;
   budget: number;
   genres: Array<{ id: number; name: string }>;
   homepage: string;
   imdb_id: string;
-  production_countries: Array<{ iso_3166_1?: string; name?: string }>;
+  production_countries: Array<{ iso_3166_1: string; name: string }>;
   revenue: number;
   runtime: number;
   spoken_languages: Array<{
@@ -43,7 +43,7 @@ export interface Cast {
   popularity: number;
   profile_path: string;
   cast_id: number;
-  character: number;
+  character: string;
   credit_id: string;
   order: number;
 }
@@ -53,4 +53,10 @@ export interface MovieList {
   results: Array<Movie>;
   totals_pages: number;
   total_results: number;
+}
+
+export interface Credits {
+  id: number;
+  cast: Cast[];
+  crew: Array<object>;
 }
