@@ -9,7 +9,7 @@ export const Upcoming = () => {
 
   return (
     <Section>
-      <Heading title="Upcoming" href="/upcoming" />
+      <Heading title="Nouvelle film" href="/upcoming" />
       <div className="py-4">
         {loading && <LoadingCarousel />}
 

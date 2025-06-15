@@ -9,7 +9,7 @@ export const TopRated = () => {
 
   return (
     <Section>
-      <Heading title="Top Rated" href="/top_rated" />
+      <Heading title="Les mieux notées" href="/top_rated" />
       <div className="py-4">
         {loading && <LoadingCarousel />}
 

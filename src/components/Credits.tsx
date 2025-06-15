@@ -10,8 +10,8 @@ export const Credits = ({ id }: { id: string | number }) => {
   return (
     <>
       {credits && (
-        <div className="flex flex-wrap gap-4">
-          {credits.cast.slice(0, 10).map((cast) => (
+        <div className="flex flex-wrap items-stretch justify-center gap-4">
+          {credits.cast.slice(0, 7).map((cast) => (
             <CastCard key={cast.id} cast={cast} />
           ))}
         </div>

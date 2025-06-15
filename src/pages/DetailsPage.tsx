@@ -66,8 +66,8 @@ const DetailsPage = () => {
               />
             </div>
           </div>
-          <div>
-            <h2>Cast</h2>
+          <div className="mt-8">
+            <h2 className="mb-2 text-center text-xl font-bold">Cast</h2>
             <Credits id={id} />
           </div>
         </>

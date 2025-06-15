@@ -17,3 +17,24 @@ body {
 .active {
   @apply border-red-500;
 }
+
+::-webkit-scrollbar {
+  width: 0px;
+  height: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #000319;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #950000;
+  border-radius: 0px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #950000;
+}
