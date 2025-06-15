@@ -5,7 +5,9 @@ import { LoadingCarousel } from "./LoadingCarousel";
 import { Section } from "./Section";
 
 export const Popular = () => {
-  const { data, loading } = UseFetchMovieList("/popular");
+  const { data, loading, error } = UseFetchMovieList("/popular");
+
+  if (error) throw new Error("Erreur lors du chargement des films");
 
   return (
     <Section>

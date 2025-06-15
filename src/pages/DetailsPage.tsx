@@ -1,9 +1,21 @@
 import { useParams } from "react-router";
 import { Credits } from "../components/Credits";
+import { ImageWithPlaceHolder } from "../components/ImageWithPlaceHolder";
 import { Section } from "../components/Section";
 import { useFetchDetails } from "../hooks/useFetchDetails";
 
-// const POSTER_PATH = import.meta.env.VITE_POSTER_PATH;
+const LoadingDetails = () => {
+  return (
+    <div className="mt-8 h-screen space-y-4 px-6">
+      <div className="flex h-1/2 animate-pulse items-center justify-center rounded-xl bg-gray-800/80">
+        Loading...
+      </div>
+      <div className="flex h-45 animate-pulse items-center justify-center rounded-xl bg-gray-800/80">
+        Loading...
+      </div>
+    </div>
+  );
+};
 
 const DetailsPage = () => {
   const { id } = useParams();
@@ -12,18 +24,25 @@ const DetailsPage = () => {
 
   const { movie, loading } = useFetchDetails(id);
 
-  if (loading) return <div>Loading....</div>;
+  if (loading) return <LoadingDetails />;
 
   return (
     <Section>
       {movie && (
         <>
           <div className="grid grid-cols-1 md:grid-cols-4">
-            <div className="flex items-stretch">
-              <img
+            <div className="relative flex items-stretch">
+              {/*  <img
                 src={`https://image.tmdb.org/t/p/w260_and_h390_bestv2${movie.poster_path}`}
                 alt=""
                 className="rounded-x w-full"
+              /> */}
+              <ImageWithPlaceHolder
+                title={movie.title}
+                poster_path={movie.poster_path}
+                width={260}
+                height={390}
+                className="h-full"
               />
             </div>
             <div className="relative h-full md:col-span-3">
@@ -42,10 +61,17 @@ const DetailsPage = () => {
                     {movie.release_date.split("-").reverse().join("/")}{" "}
                   </p>
                 </div>
-                <div
-                  className={`rounded-full border-4 border-${movie.vote_average < 7 ? "" : "green"}-500 flex size-15 items-center justify-center text-lg`}
-                >
-                  {movie.vote_average.toFixed(1)}
+                <div className="flex items-center gap-x-2">
+                  <img src="/star.svg" alt="star" className="size-10" />
+                  <div>
+                    <div>
+                      <span className="font-bold">
+                        {movie.vote_average.toFixed(1)}
+                      </span>{" "}
+                      / 10
+                    </div>
+                    <div className="text-xs font-light">{movie.vote_count}</div>
+                  </div>
                 </div>
                 <div className="flex flex-wrap gap-x-4 gap-y-2">
                   {movie.genres.map((genre) => (
@@ -67,7 +93,7 @@ const DetailsPage = () => {
             </div>
           </div>
           <div className="mt-8">
-            <h2 className="mb-2 text-center text-xl font-bold">Cast</h2>
+            <h2 className="mb-2 text-center text-xl font-bold">Distributeur</h2>
             <Credits id={id} />
           </div>
         </>

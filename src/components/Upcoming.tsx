@@ -7,13 +7,14 @@ import { Section } from "./Section";
 export const Upcoming = () => {
   const { data, loading, error } = UseFetchMovieList("/upcoming");
 
+  if (error) throw new Error("Erreur lors du chargement des films");
+
   return (
     <Section>
-      <Heading title="Nouvelle film" href="/upcoming" />
+      <Heading title="Nouveaux fims" href="/upcoming" />
       <div className="py-4">
         {loading && <LoadingCarousel />}
 
-        {error && <div>Error</div>}
         {data && <Carousel movies={data.results} />}
       </div>
     </Section>

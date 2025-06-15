@@ -1,9 +1,8 @@
 import { createBrowserRouter, RouterProvider } from "react-router";
 import DetailsPage from "./pages/DetailsPage";
 import HomePage from "./pages/HomePage";
-import LatestPage from "./pages/LatestPage";
 import Layout from "./pages/Layout";
-import PopularPage from "./pages/PopularPage";
+import MoviesPage from "./pages/MoviesPage";
 
 const router = createBrowserRouter([
   {
@@ -16,16 +15,17 @@ const router = createBrowserRouter([
         element: <HomePage />,
       },
       {
-        path: "/latest",
-        element: <LatestPage />,
-      },
-      {
-        path: "/popular",
-        element: <PopularPage />,
-      },
-      {
-        path: "/movie/:id",
-        element: <DetailsPage />,
+        path: "movie",
+        children: [
+          {
+            path: "",
+            element: <MoviesPage />,
+          },
+          {
+            path: ":id",
+            element: <DetailsPage />,
+          },
+        ],
       },
     ],
   },

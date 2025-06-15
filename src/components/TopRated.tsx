@@ -7,13 +7,13 @@ import { Section } from "./Section";
 export const TopRated = () => {
   const { data, loading, error } = UseFetchMovieList("/top_rated");
 
+  if (error) throw new Error("Erreur lors du chargement des films");
+
   return (
     <Section>
       <Heading title="Les mieux notées" href="/top_rated" />
       <div className="py-4">
         {loading && <LoadingCarousel />}
-
-        {error && <div>Error</div>}
         {data && <Carousel movies={data.results} />}
       </div>
     </Section>

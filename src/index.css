@@ -20,18 +20,20 @@ body {
 
 ::-webkit-scrollbar {
   width: 0px;
-  height: 4px;
+  height: 7px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
   background: #000319;
+  cursor: pointer;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #950000;
   border-radius: 0px;
+  cursor: pointer;
 }
 
 /* Handle on hover */

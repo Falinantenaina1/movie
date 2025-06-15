@@ -8,6 +8,9 @@ export const MovieCard = ({ movie }: { movie: Movie }) => {
       <ImageWithPlaceHolder
         title={movie.title}
         poster_path={movie.poster_path}
+        width={440}
+        height={660}
+        className="h-70 rounded-xl"
       />
       <h3 className="mt-3 text-center font-semibold hover:text-red-500">
         {movie.title}
