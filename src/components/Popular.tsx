@@ -11,7 +11,7 @@ export const Popular = () => {
 
   return (
     <Section>
-      <Heading title="Films populaire" href="/popular" />
+      <Heading title="Films populaire" href="/movie" />
       <div className="py-4">
         {loading && <LoadingCarousel />}
         {data && <Carousel movies={data.results} />}

@@ -10,4 +10,5 @@ export const getDetails = (id: string | number): Promise<MovieDetails> =>
 export const getCredits = (id: string | number): Promise<Credits> =>
   fetchData(`/movie/${id}/credits`);
 
-export const getAllMovies = () => fetchData("/discover/movie");
+export const getAllMovies = (page: string | number): Promise<MovieList> =>
+  fetchData("/discover/movie", page);

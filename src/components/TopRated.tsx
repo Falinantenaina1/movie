@@ -11,7 +11,7 @@ export const TopRated = () => {
 
   return (
     <Section>
-      <Heading title="Les mieux notées" href="/top_rated" />
+      <Heading title="Les mieux notées" href="/movie" />
       <div className="py-4">
         {loading && <LoadingCarousel />}
         {data && <Carousel movies={data.results} />}

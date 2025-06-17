@@ -11,7 +11,7 @@ export const Upcoming = () => {
 
   return (
     <Section>
-      <Heading title="Nouveaux fims" href="/upcoming" />
+      <Heading title="Nouveaux fims" href="/movie" />
       <div className="py-4">
         {loading && <LoadingCarousel />}
 
